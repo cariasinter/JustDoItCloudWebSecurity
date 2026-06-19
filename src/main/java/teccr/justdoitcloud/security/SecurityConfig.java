@@ -24,8 +24,8 @@ public class SecurityConfig {
     }
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) {
-        http
+    public SecurityFilterChain securityFilterChain(HttpSecurity httpSec) {
+        httpSec
             .csrf(
                 csrf -> csrf.ignoringRequestMatchers("/api/**")
             )
@@ -44,6 +44,6 @@ public class SecurityConfig {
                 .logoutSuccessUrl("/")
                 .invalidateHttpSession(true)
             );
-    return http.build();
+    return httpSec.build();
     }
 }

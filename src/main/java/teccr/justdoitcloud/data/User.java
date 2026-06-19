@@ -21,7 +21,7 @@ public class User implements UserDetails {
     @Id
     private Long id;
     @Column("user_name")
-    private String userName;
+    private String username;
     private String name;
     private String email;
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
@@ -36,11 +36,6 @@ public class User implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority("ROLE_" + type.name()));
-    }
-
-    @Override
-    public String getUsername() {
-        return userName;
     }
 
     public enum Type {

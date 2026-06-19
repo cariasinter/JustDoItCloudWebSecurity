@@ -34,7 +34,7 @@ public class UserService {
         if (username == null || username.trim().isEmpty()) {
             return Optional.empty();
         }
-        return userRepository.findByUserName(username.trim());
+        return userRepository.findByUsername(username.trim());
     }
 
     public Iterable<User> getAllUsers() {

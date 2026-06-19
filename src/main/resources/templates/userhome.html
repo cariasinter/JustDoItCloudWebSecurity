@@ -36,6 +36,9 @@
                         <button type="submit" class="link-button">Cerrar sesión</button>
                     </form>
                 </li>
+                <li th:if="${user.type.name() == 'ADMIN'}">
+                    <a th:href="@{/admin}">Area Administrativa</a>
+                </li>
             </ul>
         </nav>
 
@@ -53,6 +56,7 @@
                 <div class="user-name" th:text="${user.name}">Nombre Apellido</div>
                 <div class="user-meta">Usuario: <span th:text="${user.username}">username</span></div>
                 <div class="user-meta">Email: <span th:text="${user.email}">email@example.com</span></div>
+
             </div>
         </div>
 
