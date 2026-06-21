@@ -39,6 +39,10 @@
                 <li th:if="${user.type.name() == 'ADMIN'}">
                     <a th:href="@{/admin}">Area Administrativa</a>
                 </li>
+                <!-- O bien... -->
+                <li th:if="${#lists.contains(user.authorities.![authority], 'ROLE_ADMIN')}">
+                    <a th:href="@{/admin}">Area Administrativa</a>
+                </li>
             </ul>
         </nav>
 
